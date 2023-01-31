@@ -1,4 +1,5 @@
 import { ApiService } from 'API/APIService'
+import Button from 'components/ButtonCyber/Button'
 import MemeCard from 'components/MemeCard/MemeCard'
 import React, { useEffect, useState } from 'react'
 import './Meme.css'
@@ -40,6 +41,7 @@ export default function MemeMaker () {
                         )
                     })}
                 </div>
+                <Button input='12344' path='/' content='Retour_'/>
             </div>
         </div>
     </>
