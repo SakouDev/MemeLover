@@ -1,0 +1,21 @@
+
+.MemeCard {
+    text-align: center;
+    max-height: 90%;
+    padding: 2%;
+}
+
+.MemeImage {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.MemeName {
+    background: white;
+    width: 85%;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
