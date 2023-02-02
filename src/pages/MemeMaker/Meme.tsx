@@ -25,7 +25,7 @@ export default function MemeMaker () {
 
   return (
     <>
-        <div id='Container-Meme'>
+        <div id='Container-Meme' className='Neon'>
             <div id='Left'>
                 <MemeCard url={data.memes[number].url} name={data.memes[number].name} />
             </div>

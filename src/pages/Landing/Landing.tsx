@@ -10,15 +10,12 @@ export default function test() {
 
   return (
     <>
-        <header></header>
-        <section className="cyberpunk">
-            <h1 className="title">MEME</h1>
+            <h1 className="title neonTitle">MEME</h1>
             <h1 className="cyberpunk glitched">Password_</h1>
             <input type='password' className="cyberpunk glitched" onChange={(e)=>{setInput(e.target.value)}}/>
             <hr />
               <Button input={input} path='/meme' content='Start Hacking_' />
-        </section>
-        <footer></footer>
+
     </>
   )
 }

@@ -5,12 +5,18 @@ import './App.css';
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/meme" element={<MemeMaker />} />
-        <Route path="*" element={<Link style={{color:'white'}} to='/'>404</Link>} />
-      </Routes>
-    </Router>
+   <>
+      <header></header>
+      <section className="cyberpunk">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/meme" element={<MemeMaker />} />
+            <Route path="*" element={<Link style={{color:'white'}} to='/'>404</Link>} />
+          </Routes>
+        </Router>
+      </section>
+      <footer></footer>
+   </> 
   );
 }

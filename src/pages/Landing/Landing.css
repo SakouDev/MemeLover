@@ -34,12 +34,20 @@
   font-style: normal;
 }
 
+.neonTitle {
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px rgb(0, 200, 255),
+  0 0 42px rgb(0, 200, 255),
+  0 0 82px rgb(0, 200, 255),     
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--black-color);
   padding: 0px;
   margin: 0px;
 }
@@ -48,53 +56,6 @@ body * {
   font-family: "Hacked", normal ;
 }
 
-header {
-  background-color: var(--black-color); 
-  height: 50px;
-}
-
-footer {
-  background-color: var(--black-color); 
-  height: 50px;
-}
-
-section.cyberpunk::before {
-  content: " ";
-  display: block;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 50px;
-  background-color: var(--black-color);
-  position: absolute;
-  clip-path: polygon(calc(22% + 28px) -1px, calc(22% + 45px) 15px, 34% 15px, calc(34% + 15px) -1px, 70% 0px)
-}
-
-section.cyberpunk {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: calc(100vh - 90px);
-  background-color: var(--yellow-color);
-  color: #000;
-  padding: 60px 60px;
-  position: relative;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-section.cyberpunk:after {
-  content: " ";
-  display: block;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 30px;
-  background-color: #000;
-  position: absolute;
-  clip-path: polygon(0% 0%, 22% 0%, calc(22% + 30px) 30px, 52% 30px, calc(52% + 15px) 15px, 70% 15px, calc(70% + 15px) 30px, 90% 30px, calc(90% + 30px) 0px, 100% 0px, 100% 30px, 0px 30px);
-}
 
 
 input.cyberpunk, .cyberpunk input {
