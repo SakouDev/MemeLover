@@ -17,11 +17,7 @@ export default function MemeMaker () {
 
   if (!data) {
     return <div>Loading...</div>
-  }
-
-  console.log(data)
-
-  
+  }  
 
   return (
     <>

@@ -42,16 +42,19 @@
     position: absolute;
 }
 
-.menfou textarea {
-    word-break: normal;
+.menfou h1 {
+    word-break: break-all;
 }
 
 
 .menfou2{
     font-size : 1vw;
     position: absolute;
-    top: 50%;
-    width: 1%;
-    height: 1%;
+    background-color: rgb(0, 191, 249);
+    border-radius: 20px;
+    top: -35px;
+    right: 0px;
+    width: fit-content;
+    height: fit-content;
     cursor: pointer;
 }

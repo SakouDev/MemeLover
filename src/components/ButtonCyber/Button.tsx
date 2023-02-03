@@ -9,9 +9,9 @@ export default function Button({input, path, content} : {input: string, path: st
     const password = "12344"
 
     function HandleClick() {
-        if (input === password) {
+        // if (input === password) {
             navigate(path)
-        }
+        // }
     }
 
   return ( 
