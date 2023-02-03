@@ -1,42 +1,55 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Draggable from 'react-draggable'
 import './MemeCard.css'
+import html2canvas from 'html2canvas';
+import downloadjs from 'downloadjs';
+import { display } from 'html2canvas/dist/types/css/property-descriptors/display';
 
 export default function MemeCard({name , url} : {name: string, url: string}) {
 
-  const [text, setText] = useState([
-    {menfou:"1"},
-    {menfou:"2"},
-    {menfou:"3"},
-    {menfou:"4"}
-  ])
-
+  const [text, setText] = useState([{menfou:""}])
   const [disable, setDisable] = useState<boolean>(false)
+  const [trash, setTrash] = useState<boolean>(true)
 
-  console.log(text)
 
-  function Delete(key : any) {
-    const TA_MERE = text.filter((item, index) => index != key)
-    setText(TA_MERE)
-  }
+  useEffect(() => {
+    if(trash == false){
+      html2canvas(document.querySelector("#capture")! as HTMLElement, {useCORS : true}).then(canvas => {
+        downloadjs( canvas.toDataURL(), 'download.png', 'image/png');
+      })
+    }
+    setTrash(true)
+  }, [trash])
+
+  // document.getElementById('textMenfou')!.addEventListener('mouseover', (e:any) => {
+  //   const { cursor } = getComputedStyle(e.target);
+  //   let x = e.clientX
+  //   let y = e.clientY
+
+  //   console.log(x,y)
+  // });
+  
 
   return (
     <>
-      <div className='MemeCard'>
-          <img id='MemeImage' className="MemeImage" src={url} alt="Drake Hotline Bling" />
-          {text.map((element : any,key : number) => {
+      <div id='capture' className='MemeCard'>
+          <img id='MemeImage' className="MemeImage" src={url} alt={name} />
+          {text.map((element,index) => {
             return (
-              <Draggable key={key} disabled={disable} bounds="parent">
+              <Draggable key={index} disabled={disable} bounds="parent">
                 <div className='menfou'>
-                  <textarea>{element.menfou}</textarea>
-                  <button onClick={() => {Delete(key)}} className='menfou2'>🗑️</button>
+                  <textarea id='textMenfou' style={trash ? {cursor:'pointer'} : {border: "none"}}>{element.menfou}</textarea>
+                  {trash &&
+                    <button onClick={() => setText(text.filter((item, key) => key !== index))} className='menfou2'>🗑️</button>
+                  }
                 </div>
               </Draggable>
             )})}
       </div>
       <div className='MemeName'>
           <h3 onClick={() => {setDisable(!disable)}}>Dragable ?</h3>
-          <h3 onClick={() => {setText([...text, {menfou:"new"}])}}>TEXT ?</h3>
+          <h3 onClick={() => {setText([...text, {menfou:""}])}}>TEXT ?</h3>
+          <h3 onClick={() => {setTrash(false)}}>Download</h3>
       </div>
     </>
   )

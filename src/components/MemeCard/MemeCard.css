@@ -2,8 +2,7 @@
 .MemeCard {
     text-align: center;
     max-height: 90%;
-    padding: 2%;
-    /* border: solid blue 2px; */
+    margin: 0 2% 2% 4%;
     position:relative;
     height : fit-content;
     display: flex;
@@ -31,8 +30,9 @@
 }
 
 .MemeName h3 {
-    width: 50%;
+    width: 33.50%;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 
@@ -40,14 +40,18 @@
     color : purple;
     font-size : 2vw;
     position: absolute;
-    border: solid red 2px; 
 }
+
+.menfou textarea {
+    word-break: normal;
+}
+
+
 .menfou2{
     font-size : 1vw;
     position: absolute;
     top: 50%;
     width: 1%;
     height: 1%;
-    border: solid red 2px; 
     cursor: pointer;
 }
