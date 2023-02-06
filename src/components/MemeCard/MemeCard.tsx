@@ -8,12 +8,11 @@ import { display } from 'html2canvas/dist/types/css/property-descriptors/display
 export default function MemeCard({name , url} : {name: string, url: string}) {
 
   const [text, setText] = useState([
-    {menfou:"false", clientX: 0, clientY: 0},
-    {menfou:"false", clientX: 0, clientY: 0},
+    {menfou:"", clientX: 0, clientY: 0},
+    {menfou:"", clientX: 0, clientY: 0},
   ])
   const [disable, setDisable] = useState<boolean>(false)
   const [trash, setTrash] = useState<boolean>(true)
-
 
   useEffect(() => {
     if(trash == false){
@@ -24,10 +23,6 @@ export default function MemeCard({name , url} : {name: string, url: string}) {
     setTrash(true)
   }, [trash])
 
-  useEffect(() => {
-    console.log(text)
-  }, [text])
-
   // document.getElementById('menfou')!.addEventListener('mouseover', (e:any) => {
   //   const { cursor } = getComputedStyle(e.target);
   //   let x = e.clientX
@@ -35,16 +30,14 @@ export default function MemeCard({name , url} : {name: string, url: string}) {
 
   //   console.log(cursor)
   // });
-  
-  
-  function NTM(index: number) {
+
+  function HandleDelete(index: number) {
     const newData = [...text];
     console.log( newData.splice(index,1))
     console.log("hahahah",newData)
     setText(newData)
   }
 
-  
   function HandleChange (e:any, index:number){
     let newArray = [...text];
     newArray[index] = {...newArray[index], menfou : e.target.value};
@@ -57,8 +50,7 @@ export default function MemeCard({name , url} : {name: string, url: string}) {
     setText(newArray);
   }
   
-
-
+  
   return (
     <>
       <div id='capture' className='MemeCard'>
@@ -88,7 +80,7 @@ export default function MemeCard({name , url} : {name: string, url: string}) {
 
                   {trash &&
                     <button
-                    onClick={() => NTM(index)} className='menfou2'>🗑️</button>
+                    onClick={() => HandleDelete(index)} className='menfou2'>🗑️</button>
                   } 
                   
                 </div>
@@ -97,7 +89,7 @@ export default function MemeCard({name , url} : {name: string, url: string}) {
       </div>
       <div className='MemeName'>
           <h3 onClick={() => {setDisable(!disable)}}>Dragable ?</h3>
-          <h3 onClick={() => {setText([...text, {menfou:"true", clientX:0 , clientY:0}])}}>TEXT ?</h3>
+          <h3 onClick={() => {setText([...text, {menfou:"", clientX:0 , clientY:0}])}}>TEXT ?</h3>
           <h3 onClick={() => {setTrash(false)}}>Download</h3>
       </div>
     </>

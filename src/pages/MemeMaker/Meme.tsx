@@ -16,7 +16,7 @@ export default function MemeMaker () {
   }, [])
 
   if (!data) {
-    return <div>Loading...</div>
+    return <h1>Loading...</h1>
   }  
 
   return (
