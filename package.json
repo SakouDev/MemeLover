@@ -191,7 +191,7 @@
     "webpack-merge": "^5.8.0"
   },
   "build": {
-    "productName": "MemeLover",
+    "productName": "Meme Lover",
     "appId": "MemeLoverId",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
