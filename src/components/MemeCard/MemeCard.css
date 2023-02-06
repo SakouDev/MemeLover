@@ -38,12 +38,18 @@
 
 .menfou{
     color : purple;
-    font-size : 2vw;
     position: absolute;
 }
 
-.menfou h1 {
+#textMenfou {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size : 2em;
     word-break: break-all;
+    padding: 15px;
+    overflow: auto;
+    color: red;
+    text-shadow: 2px 0 blue, -2px 0 blue, 0 2px blue, 0 -2px blue,
+             1px 1px blue, -1px -1px blue, 1px -1px blue, -1px 1px blue;
 }
 
 
