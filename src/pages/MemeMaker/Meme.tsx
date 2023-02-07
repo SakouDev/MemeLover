@@ -25,6 +25,7 @@ export default function MemeMaker () {
             <div id='Left'>
                 <MemeCard url={data.memes[number].url} name={data.memes[number].name} />
             </div>
+            
             <div id='Right'>
                 <h1 className='TitleMeme'>Make the meme</h1>
                 <div className='MemeSelect'>
