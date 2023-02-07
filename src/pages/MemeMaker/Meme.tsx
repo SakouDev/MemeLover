@@ -26,7 +26,7 @@ export default function MemeMaker () {
                 <MemeCard url={data.memes[number].url} name={data.memes[number].name} />
             </div>
             <div id='Right'>
-                <h1>Make the meme</h1>
+                <h1 className='TitleMeme'>Make the meme</h1>
                 <div className='MemeSelect'>
                     {data.memes.map((meme: any, index:number) => {
                         return (
@@ -37,7 +37,6 @@ export default function MemeMaker () {
                         )
                     })}
                 </div>
-                <Button input='12344' path='/' content='Retour_'/>
             </div>
         </div>
     </>

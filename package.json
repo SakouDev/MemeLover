@@ -193,8 +193,16 @@
   "build": {
     "productName": "Meme Lover",
     "appId": "MemeLoverId",
+    "copyright": "© Sakou Meme Lover",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
+    "win": {
+      "publish": {
+         "provider": "github",
+         "owner": "SakouDev",
+         "repo": "MemeLover"
+      }
+    },
     "files": [
       "dist",
       "node_modules",
@@ -227,11 +235,6 @@
           "type": "link",
           "path": "/Applications"
         }
-      ]
-    },
-    "win": {
-      "target": [
-        "nsis"
       ]
     },
     "linux": {

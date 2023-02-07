@@ -52,6 +52,7 @@ export default function MemeCard({name , url} : {name: string, url: string}) {
                 bounds="parent"
                 position={{x: element.clientX, y: element.clientY}}
                 onStop={(e, data) => {HandleStopDrag(data, index)}}
+                key={index}
               >
                 <div key={index}  className='menfou'>
 
@@ -78,9 +79,9 @@ export default function MemeCard({name , url} : {name: string, url: string}) {
             )})}
       </div>
       <div className='MemeName'>
-          <h3 onClick={() => {setDisable(!disable)}}>Dragable ?</h3>
-          <h3 onClick={() => {setText([...text, {menfou:"", clientX:0 , clientY:0}])}}>TEXT ?</h3>
-          <h3 onClick={() => {setTrash(false)}}>Download</h3>
+          <h3 onClick={() => {setDisable(!disable)}}>Sandevistan</h3>
+          <h3 onClick={() => {setText([...text, {menfou:"", clientX:0 , clientY:0}])}}>More</h3>
+          <h3 onClick={() => {setTrash(false)}}>Hack_</h3>
       </div>
     </>
   )

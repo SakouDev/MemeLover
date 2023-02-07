@@ -37,8 +37,15 @@
     align-items: center;
 }
 
+.TitleMeme{
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+
 .MemeSelect {
-    width: 80%;
+    width: 85%;
     height: 90%;
     background-color: white;
     display: flex;
@@ -47,23 +54,27 @@
     overflow-y: scroll;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    margin: 1%;
 }
 
 
 .Memes {
     border: 5px solid black; 
+    border-radius: 10px;
     cursor: pointer;
     margin: 1%;
-    width: 20%;
-    height: 20%;
-    background-color: purple;
+    width: 30%;
+    color: #fff;
+    height: 40%;
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .MemesName {
-    width: 7ch;
+    width: 12ch;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
