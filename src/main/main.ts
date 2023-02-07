@@ -20,29 +20,6 @@ class AppUpdater {
     log.transports.file.level = 'info';
     autoUpdater.logger = log;
     autoUpdater.checkForUpdatesAndNotify();
-
-    autoUpdater.on('update-available', () => {
-      dialog.showMessageBox({
-        type: 'info',
-        title: 'Found Updates',
-        message: 'Found updates, do you want update now?',
-        buttons: ['Sure', 'No'],
-      }).then((buttonIndex) => {
-        if (buttonIndex.response === 0) {
-          autoUpdater.downloadUpdate();
-        }
-      });
-    });
-
-    autoUpdater.on('update-downloaded', () => {
-      dialog.showMessageBox({
-        title: 'Install Updates',
-        message: 'Updates downloaded, application will be quit for update...',
-      }).then(() => {
-        setImmediate(() => autoUpdater.quitAndInstall());
-      });
-    })
-
   }
 }
 
