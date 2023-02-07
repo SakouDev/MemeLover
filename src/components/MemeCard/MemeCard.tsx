@@ -7,8 +7,7 @@ import downloadjs from 'downloadjs';
 export default function MemeCard({name , url} : {name: string, url: string}) {
 
   const [text, setText] = useState([
-    {menfou:"", clientX: 0, clientY: 0},
-    {menfou:"", clientX: 0, clientY: 0},
+    {menfou:"", clientX: 0, clientY: 0}
   ])
   const [disable, setDisable] = useState<boolean>(false)
   const [trash, setTrash] = useState<boolean>(true)
